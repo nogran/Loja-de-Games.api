@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity                		// Entidade para gerar tabela no BD.
 @Table(name = "tb_produtos")
-
 public class Produto {
 	
 	@Id	// PK	// @GeneratedValue = PK sera gerada automaticamente.
@@ -39,10 +38,9 @@ public class Produto {
 	
 	@Column(name = "data_lancamento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	
 	private LocalDate dataLancamento;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING) // ASK
+	@JsonFormat(shape = JsonFormat.Shape.STRING) 
 	@NotNull(message = "Preço é obrigatório!")
 	@Positive(message = "O preço deve ser maior do que zero!")
 	private BigDecimal preco;
